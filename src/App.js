@@ -1,23 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+import Bookingpage from './components/Bookingpage';
+import Filter from './components/Filter';
+import Footer from './components/Footer';
+import Navbar from './components/Navabar';
+import Trip from './components/Trip';
 
 function App() {
+  const handleTripTypeChange = (tripType) => {
+    console.log("Selected Trip Type:", tripType);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Navbar />
+      <Bookingpage onTripTypeChange={handleTripTypeChange} />
+      <Footer />
     </div>
   );
 }
